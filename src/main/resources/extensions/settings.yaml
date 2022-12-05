@@ -1,0 +1,14 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: pixabay-settings
+spec:
+  forms:
+    - group: basic
+      label: 基本设置
+      formSchema:
+        - $formkit: password
+          help: https://pixabay.com/api/docs/
+          label: Access Key
+          name: accessKey
+          validation: required
