@@ -52,6 +52,7 @@ jobs:
           echo "The version original is: $version"
           sed -i "s#version=.*#version=$version#g" gradle.properties
           echo "Setting version to: $version"
+          cat gradle.properties
           ./gradlew clean build -x test
       - name: Archive plugin-pixabay jar
         uses: actions/upload-artifact@v2
