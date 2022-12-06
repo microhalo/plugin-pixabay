@@ -50,7 +50,7 @@ jobs:
           version=${{ github.event.release.tag_name }}
           version=${version#v}
           echo "The version original is: $version"
-          sed -i "s#version=.*$#version=$version#g" gradle.properties
+          sed -i "s#version=.*#version=$version#g" gradle.properties
           echo "Setting version to: $version"
           ./gradlew clean build -x test
       - name: Archive plugin-pixabay jar
