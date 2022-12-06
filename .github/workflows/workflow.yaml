@@ -49,7 +49,6 @@ jobs:
           # Set the version with tag name when releasing
           version=${{ github.event.release.tag_name }}
           version=${version#v}
-          echo "The version original is: $version"
           \sed -i "s#^version=.*#version=$version#gi" gradle.properties
           \sed -i "s#^\s\sversion:.*#  version: $version#gi" src/main/resources/plugin.yaml
           \sed -i "s#^  \"version\": \".*\",#  \"version\": \"$version\",#gi" console/package.json
