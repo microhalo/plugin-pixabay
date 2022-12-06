@@ -57,7 +57,7 @@ jobs:
           echo "Setting version to: $version"
           cat gradle.properties
           cat src/main/resources/plugin.yaml
-          cat console.package.json
+          cat console/package.json
           ./gradlew clean build -x test
       - name: Archive plugin-pixabay jar
         uses: actions/upload-artifact@v2
