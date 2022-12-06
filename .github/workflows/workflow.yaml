@@ -50,14 +50,9 @@ jobs:
           version=${{ github.event.release.tag_name }}
           version=${version#v}
           echo "The version original is: $version"
-          sed -i "s#^version=.*#version=$version#gi" gradle.properties
-          sed -i "s#^\s\sversion:.*#  version: $version#gi" src/main/resources/plugin.yaml
-          sed -i "s#^  \"version\": \".*\",#  \"version\": \"$version\",#gi" console/package.json
-
-          echo "Setting version to: $version"
-          cat gradle.properties
-          cat src/main/resources/plugin.yaml
-          cat console/package.json
+          \sed -i "s#^version=.*#version=$version#gi" gradle.properties
+          \sed -i "s#^\s\sversion:.*#  version: $version#gi" src/main/resources/plugin.yaml
+          \sed -i "s#^  \"version\": \".*\",#  \"version\": \"$version\",#gi" console/package.json
           ./gradlew clean build -x test
       - name: Archive plugin-pixabay jar
         uses: actions/upload-artifact@v2
