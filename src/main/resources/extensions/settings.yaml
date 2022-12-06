@@ -8,7 +8,7 @@ spec:
       label: 基本设置
       formSchema:
         - $formkit: password
-          help: https://pixabay.com/api/docs/
+          help: "For further details, please refer to: https://pixabay.com/api/docs/"
           label: Access Key
           name: accessKey
           validation: required

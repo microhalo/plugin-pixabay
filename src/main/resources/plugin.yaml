@@ -7,12 +7,12 @@ spec:
   version: 1.0.0
   requires: "*"
   author:
-    name: Halo OSS Team
-    website: https://github.com/halo-dev
+    name: Halo OSS Team & MicroHalo
+    website: https://github.com/microhalo/plugin-pixabay
   logo: logo.svg
   settingName: pixabay-settings
   configMapName: pixabay-settings
-  homepage: https://github.com/halo-sigs/plugin-pixabay
+  homepage: https://github.com/microhalo/plugin-pixabay
   displayName: "Pixabay"
   description: "提供从 Pixabay 选择或转存图片的能力"
   license:
