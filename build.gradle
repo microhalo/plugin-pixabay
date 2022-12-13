@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.node-gradle.node" version "3.3.0"
+    id "com.github.node-gradle.node" version "3.5.0"
     id "io.github.guqing.plugin-development" version "0.0.6-SNAPSHOT"
     id 'java'
 }
@@ -54,13 +54,13 @@ task buildFrontend(type: NpxTask) {
     args = ['build']
 }
 
-task pnpmInstall(type: NpxTask) {
-    command = "pnpm"
-    args = ["install"]
-}
+// task pnpmInstall(type: NpxTask) {
+//     command = "pnpm"
+//     args = ["install"]
+// }
 
 build {
     // build frontend before build
-    tasks.getByName("buildFrontend").dependsOn("pnpmInstall")
+    tasks.getByName("buildFrontend")//.dependsOn("pnpmInstall")
     tasks.getByName('compileJava').dependsOn('buildFrontend')
 }
